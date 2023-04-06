@@ -1,0 +1,40 @@
+.UsersForm__ {
+    background-color: #fff;
+    width: 40rem;
+    margin: 2rem auto;
+    border-radius: 10px;
+    max-width: 70%;
+    padding: 1rem;
+}
+
+.UserForm__input {
+    background-color: #fff;
+}
+
+.UserForm__input label {
+    background-color: #fff;
+    font-weight: 700;
+    margin: 5px 0px;
+}
+
+.UserForm__input input {
+    background-color: #fff;
+    width: 100%;
+    border: 1px solid rgb(226, 226, 226);
+    margin: 1px 0px;
+    height: 1.5rem;
+}
+
+.UserForm__input button {
+    background-color: rgb(51, 13, 51);
+    color: #fff;
+    margin-top: 10px;
+    width: 6rem;
+    height: 2rem;
+    border: transparent;
+    font-weight: 500px;
+}
+
+.UserForm__input button:hover {
+    background-color: rgb(116, 8, 116);
+}
