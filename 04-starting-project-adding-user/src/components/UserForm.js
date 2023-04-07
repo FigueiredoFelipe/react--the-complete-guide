@@ -10,7 +10,7 @@ const UserForm = (props) => {
     }
 
     const inputUserAgeHandler = (event) => {
-        setEnteredAge(event.target.value)
+        setEnteredAge(parseInt(event.target.value))
     }
 
     const submitHandler = (event) => {

@@ -30,6 +30,8 @@ const App = () => {
     })
   }
 
+  console.log(users);
+
   return (
     <div>
       <UserForm onAddUser={addUserHandler} />
