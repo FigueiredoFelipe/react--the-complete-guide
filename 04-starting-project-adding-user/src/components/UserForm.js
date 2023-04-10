@@ -1,5 +1,5 @@
 import React from 'react';
-import './UserForm.css';
+import classes from './UserForm.module.css';
 
 const UserForm = (props) => {
 
@@ -32,8 +32,8 @@ const UserForm = (props) => {
 
 
     return (
-        <form className="UsersForm__" onSubmit={submitHandler}>
-            <div className="UserForm__input">
+        <form className={classes.UsersForm__} onSubmit={submitHandler}>
+            <div className={classes.UserForm__input}>
                 <label>Username:</label>
                 <input
                     type="text"
