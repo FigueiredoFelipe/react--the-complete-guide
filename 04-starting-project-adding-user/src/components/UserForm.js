@@ -1,28 +1,33 @@
-import React, { useState } from "react";
+import React from 'react';
 import './UserForm.css';
 
 const UserForm = (props) => {
-    const [enteredName, setEnteredName] = useState('')
-    const [enteredAge, setEnteredAge] = useState('')
+
 
     const inputUserNameHandler = (event) => {
-        setEnteredName(event.target.value)
+        props.setEnteredName(event.target.value)
     }
 
     const inputUserAgeHandler = (event) => {
-        setEnteredAge(parseInt(event.target.value))
+        props.setEnteredAge(parseInt(event.target.value))
     }
 
     const submitHandler = (event) => {
         event.preventDefault()
         const userData = {
             key: Math.random().toString(36).substr(2, 7),
-            name: enteredName,
-            age: enteredAge
+            name: props.enteredName,
+            age: props.enteredAge
         }
+
+        if (userData.name === '' || userData.age === "") {
+            props.openModal()
+            return
+        }
+
         props.onAddUser(userData)
-        setEnteredName('')
-        setEnteredAge('')
+        props.setEnteredName('')
+        props.setEnteredAge('')
     }
 
 
@@ -33,13 +38,13 @@ const UserForm = (props) => {
                 <input
                     type="text"
                     onChange={inputUserNameHandler}
-                    value={enteredName}
+                    value={props.enteredName}
                 />
                 <label>Age (Years):</label>
                 <input
                     type="number"
                     onChange={inputUserAgeHandler}
-                    value={enteredAge}
+                    value={props.enteredAge}
                 />
                 <button type="submit">Add User</button>
             </div>

@@ -25,18 +25,14 @@ const App = () => {
 
   const [users, setUsers] = useState(INITIAL_USERS)
   const [openModal, setOpenModal] = useState(false)
+  const [enteredName, setEnteredName] = useState('')
+  const [enteredAge, setEnteredAge] = useState('')
 
   const addUserHandler = (enteredData) => {
-
-    if (enteredData.name === '' || enteredData.age === "") {
-      setOpenModal(true)
-      return
-    }
 
     setUsers((prevUsers) => {
       return [enteredData, ...prevUsers]
     })
-
 
   }
 
@@ -46,9 +42,9 @@ const App = () => {
 
   return (
     <div>
-      <UserForm onAddUser={addUserHandler} />
+      <UserForm onAddUser={addUserHandler} openModal={()=>{setOpenModal(true)}} enteredName={enteredName} setEnteredName={setEnteredName} enteredAge={enteredAge} setEnteredAge={setEnteredAge}/>
       <UserList listed={users} />
-      <Modal isOpen={openModal} closeModal={closeModalHandler} />
+      <Modal isOpen={openModal} closeModal={closeModalHandler} feedBack={enteredName === '' ? 'name':'age'}/>
     </div>
   );
 }
