@@ -28,12 +28,7 @@ const App = () => {
 
   const addUserHandler = (enteredData) => {
 
-    if (enteredData.name === '') {
-      setOpenModal(true)
-      return
-    }
-
-    if (enteredData.age === "") {
+    if (enteredData.name === '' || enteredData.age === "") {
       setOpenModal(true)
       return
     }
